@@ -8,7 +8,7 @@
     <link rel="icon" href="img/favicon.png" type="image/png">
     <title>Elements</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/boo	tstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
@@ -107,53 +107,97 @@
 	
 	
 	<!-- Start Align Area -->
+	
+	
+	
+	
+	
+	
+<pre>       
+
+</Pre>
+<div class="container">
+<div class="comment-form " style="padding-bottom:60px;">
+                        <h3>Course Offering Admin</h3>
+                        <form>
+                            <div class="form-group form-inline">
+                                <div class="form-group col-lg-3 col-md-3 name">
+                                    <!-- <input type="text" class="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''" -->
+                                    
+										<!-- onblur="this.placeholder = 'Enter Name'"> -->
+									<label>Semester: </label>
+									<select id="semester" class="form-control" placeholder="Enter semester" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+										<option value="selectsemester">Select semester</option>
+										<option value="fall2019">Fall2019</option>
+										<option value="spring2019">spring2019</option>
+									</select>
+									
+										
+										
+										
+                                </div>
+                                
+                            </div>
+							<div class="form-group form-inline">
+								<div class="form-group col-lg-6 col-md-6 name">
+										<label>coursecode: </label>
+										<select id="coursecode" class="form-control" placeholder="Enter semester" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+											<option value="selectcoursecode">select course code</option>
+										</select>
+										<!-- <input type="text" class="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''" -->
+											<!-- onblur="this.placeholder = 'Enter Name'"> -->
+								</div>
+								<div class="form-group col-lg-6 col-md-6 email">
+									<label>Course Name: </label>
+									<select id="semester" class="form-control" placeholder="Enter semester" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+										<option value="Select course name">Select course name</option>
+									</select>
+									<!-- <input type="email" class="form-control" id="email" placeholder="Enter email address" -->
+                                        <!-- onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"> -->
+                                </div>
+							</div>
+							<div class="form-group form-inline">
+								<div class="form-group col-lg-6 col-md-6 name">
+									<label>Schedule: </label>
+									<select id="semester" class="form-control" placeholder="Enter semester" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+										<option value="Select course name">Select Schedule</option>
+									</select>
+								</div>
+                                <div class="form-group col-lg-6 col-md-6 email">
+                                    <label>Teacher: </label>
+									<select id="semester" class="form-control" placeholder="Enter semester" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+										<option value="Select teacher">Select course name</option>
+									</select>
+                                </div>
+							</div>
+							<div class="form-group">
+								<a href="#" class="primary-btn" style="float:right">Save</a>
+							</div>
+                        </form>
+                    </div>
+					</div>
 <pre>       
 
 </Pre>
-	<div class="container">
-<h4><label for="semester">Choose a semester:</label>
-
-<select id="semester">
- <option value="first">first</option>
-  <option value="second">second</option>
-  <option value="third">third</option>
-  <option value="fourth">fourth</option>
-</select></h4>
-
-	
-	
-<pre>       
 
 
 
-<h2>course id</h2>
-</Pre>	
-	</div>
-	
-						<!-- <div class="container"> -->
-						<!-- <table class="action_table"> -->
-					  <!-- <tbody> -->
-						<!-- <tr class="blank_row"> -->
-						  <!-- <td>&nbsp;</td> -->
-						<!-- </tr> -->
-						<!-- <tr class="blank_row"> -->
-						  <!-- <td>&nbsp;</td> -->
-						<!-- </tr> -->
-						<!-- <tr class="blank_row"> -->
-						  <!-- <td>&nbsp;</td> -->
-						<!-- </tr> -->
-					  <!-- </tbody> -->
-					<!-- </table> -->
-					<!-- </div> -->
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
 	
 	
 	
@@ -161,16 +205,33 @@
 	
 	<div class="whole-wrap">
 		<div class="container">
-			  <table class="table table-hover">
+				<h4><label>Course Offering</label></h4>
+			 <table class="table table-hover">
     <thead>
-      <tr>
+      <h1><tr>
+		
         <th>Course ID</th>
         <th>Code</th>
         <th>Name</th>
 		<th>Credits</th>
 		<th>Schedule</th>
 		<th>Teacher</th>
-      </tr>
+		<th>
+				<!-- <div> -->
+				<!-- <a href="#" id="Edit"></a> -->
+				<!-- <span class="badge badge-secondary"><a href="https://***********">Edit</a></span> -->
+				<!-- </div> -->
+				<button type="button" class="btn btn-link">Edit</button>
+		</th>
+		<th>
+				<!-- <div> -->
+				<!-- <a href="#" id="Edit"></a> -->
+				<!-- <span class="badge badge-success"><a href="https://***********">Dlete</a></span> -->
+				<!-- </div> -->
+				<button type="button" class="btn btn-link">Delete</button>
+		</th>
+		<!-- <td><span class="badge badge-warning" colspan="6">Whatever</span></td> -->
+      </tr></h1>
     </thead>
     <tbody>
       <tr>
@@ -180,22 +241,28 @@
 		<td>3</td>
 		<td>TTh 11:00-12:30</td>
 		<td>Jhon</td>
-      </tr>
-      <tr>
-        <td>02</td>
-        <td>CSC 306</td>
-        <td>Programming 2</td>
-		<td>3</td>
-		<td>MW 1:00-2:30</td>
+		<td>Jhon</td>
 		<td>Jhon</td>
       </tr>
       <tr>
-        <td>03</td>
-        <td>CSC 255</td>
-        <td>Database Design</td>
-		<td>3</td>
-		<td>TTh 11:00-12:30</td>
-		<td>Jhon</td>
+        <td> 	</td>
+        <td></td>
+        <td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
       </tr>
     </tbody>
   </table>
@@ -210,6 +277,18 @@
 </Pre>
 	
 	
+	
+	
+	
+	
+
+<pre>       
+
+
+
+
+
+</Pre>
 	<!-- End Align Area -->
 
 	<!--================ Start footer Area  =================-->

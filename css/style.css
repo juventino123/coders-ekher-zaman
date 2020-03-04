@@ -193,11 +193,17 @@ button:focus {
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
+  float : right;   
   transition: all 0.3s ease 0s; }
+  
   .primary-btn:hover {
-    background-position: right center;
+    background-position: right bottom;
     color: #fff;
     box-shadow: none; }
+	
+	.clear{
+		float:clear;
+	}
 
 /* End Buttons Area css
 ============================================================================================ */
