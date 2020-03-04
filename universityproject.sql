@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 04, 2020 at 03:29 PM
+-- Generation Time: Mar 04, 2020 at 04:56 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -35,7 +35,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `userName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `userName`, `password`) VALUES
+(1, 'admin1', 'admin1', 'password1');
 
 -- --------------------------------------------------------
 
@@ -51,7 +58,19 @@ CREATE TABLE IF NOT EXISTS `course` (
   `numberOfCredits` int(11) NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=101203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`id`, `code`, `name`, `numberOfCredits`, `description`) VALUES
+(100305, 'CSC305', 'Programming 1', 3, 'C++'),
+(100306, 'CSC306', 'Programming 2', 3, 'Object Oriented C++'),
+(101202, 'MAT202', 'Matlab', 3, 'Matlab'),
+(100400, 'CSC400', 'Analysis and Design', 3, 'Analysis and Design'),
+(100300, 'CSC300', 'Database', 3, 'Database design and SQL'),
+(100301, 'CSC301', 'Software Engineering', 3, 'Software Engineering');
 
 -- --------------------------------------------------------
 
@@ -95,7 +114,31 @@ CREATE TABLE IF NOT EXISTS `schedule` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `schedule`
+--
+
+INSERT INTO `schedule` (`id`, `name`) VALUES
+(1, 'MWF 8:00-9:00 AM'),
+(2, 'MWF 9:00-10:00 AM'),
+(3, 'MWF 11:00-12:00 AM'),
+(4, 'MWF 12:00-1:00 PM'),
+(5, 'MWF 1:00-2:00 PM'),
+(6, 'MWF 2:00-3:00 PM'),
+(7, 'MWF 3:00-4:00 PM'),
+(8, 'MWF 4:00-5:00 PM'),
+(9, 'MWF 5:00-6:00 PM'),
+(10, 'MWF 6:00-7:00 PM'),
+(20, 'TTh 8:00-9:15 AM'),
+(21, 'TTh 9:30-10:45 AM'),
+(22, 'TTh 11:00-12:15 PM'),
+(23, 'TTh 12:30-1:45 PM'),
+(24, 'TTh 2:00-3:15 PM'),
+(25, 'TTh 3:30-4:45 PM'),
+(26, 'TTh 5:00-6:15 PM'),
+(27, 'TTh 6:30-7:45 PM');
 
 -- --------------------------------------------------------
 
@@ -110,7 +153,15 @@ CREATE TABLE IF NOT EXISTS `semester` (
   `startingDate` date NOT NULL,
   `endingDate` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `semester`
+--
+
+INSERT INTO `semester` (`id`, `name`, `startingDate`, `endingDate`) VALUES
+(60, 'Fall2019', '2019-10-01', '2020-01-31'),
+(61, 'Spring2020', '2020-02-17', '2020-06-17');
 
 -- --------------------------------------------------------
 
@@ -128,7 +179,16 @@ CREATE TABLE IF NOT EXISTS `student` (
   `mobileNumber` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20193411 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `firstName`, `middleName`, `lastName`, `email`, `mobileNumber`, `password`) VALUES
+(20183020, 'Iyad', 'G.', 'DDD', 'iyad@uni.edu.lb', '81/203022', 'iyad333'),
+(20193033, 'Kareen', 'M.', 'Royce', 'kareen1@uni.edu.lb', '70/536399', 'kareen333'),
+(20193410, 'Daniel', 'L.', 'Debian', 'daniel3@uni.edu.lb', '71/542968', 'daniel333');
 
 -- --------------------------------------------------------
 
@@ -146,7 +206,15 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `mobileNumber` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `teacher`
+--
+
+INSERT INTO `teacher` (`id`, `firstName`, `middleName`, `lastName`, `email`, `mobileNumber`, `password`) VALUES
+(80, 'John', 'G.', 'Kelly', 'john1@uni.edu.lb', '76/506480', 'john333'),
+(81, 'David', 'S.', 'Massoud', 'david1@uni.edu.lb', '03/376844', 'david333');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
