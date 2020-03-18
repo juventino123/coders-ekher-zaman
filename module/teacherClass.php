@@ -1,34 +1,42 @@
 <?php
-class admin
+
+class teacher
 {
-	private $id;
-	private $name;
-	private $userName;
-	private $password;
-	
+	public $id;
+	public $firstName;
+	public $middleName;
+	public $lastName;
+	public $email;
+	public $mobileNumber;
+	public $password;
+	public $db;
 		
 	public function __set($property, $value){	
 		$this->property = $value;
+
 	} 
 	public function __get($property){	
 		return $this->property;
 	} 
+	
 
-    function __construct()
+    function __construct($db)
     {
-		
+    	
+		$this->db = $db;
 	}
 
 
 	public function verifyLogin(){
 
 		$query = "SELECT *
-				  FROM admin 
-				  WHERE id = ".$this->id."
+				  FROM  teacher 
+				  WHERE id = '".$this->id."'
 				        and password = '".$this->password."'" ;	 
-
+		print $query;
 		//checking if the username is available in db
-		$resultSelectUser = $db->selectQuery($query);
+
+		$resultSelectUser = ($this->db)->selectQuery($query);
 		$count_row = count($resultSelectUser);
 
 		//if the check is correct put the admin's details in session
@@ -36,11 +44,13 @@ class admin
 
 			foreach ($resultSelectUser as $admin) {
 				$_SESSION['login']['id'] =  $admin['id'];
-				$_SESSION['login']['name'] = $admin['name'];
+				$_SESSION['login']['name'] = $admin['firstName'];
+				$_SESSION['login']['type'] = 'teacher';
 				} // end for 
+			return 1;
 			}
 		else{
-			 print'The username or password you entered is incorrect. Please try again';
+			 return 0;
 			} // end else
 
 		} // end function
