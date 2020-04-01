@@ -1,5 +1,16 @@
+ <?php 
+    // the menu doesn't appear in the login page
+    if(isset($_SESSION)){?>
+                        <!-- end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+}?>
 <!--================ start footer Area  =================-->
-    <footer class="footer-area section_gap">
+    <footer class="footer-area section_gap" style="margin-top: 20px;margin-bottom: 0px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-6 single-footer-widget">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../module/functions.php";
-testAccess("student");
+testAccess("admin");
 include "./header.php";
 ?>
 						<h1>Welcome <?php print $_SESSION['login']['name'];?></h1>

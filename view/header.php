@@ -70,7 +70,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                   <!-- <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
@@ -98,11 +98,72 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </nav>
         </div>
     </header>
-    <!--================ End Header Menu Area =================-->
 
+    <?php 
+    // the menu doesn't appear in the login page
+    if(isset($_SESSION)){?>
+    <!--================ End Header Menu Area =================-->
+<style>
+    
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+  margin:10px;
+  text-transform: uppercase;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #00aee0; /* Add a green color to the "active/current" link */
+  color: white;
+}
+    </style>
+    <!--================ Start Registration Area =================-->
+    <div class="section_gap registration_area">
+        <div class="container-fluid" style="margin-bottom: 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    
+                        <div class="vertical-menu">
+                        <?php 
+                        if($_SESSION['login']['type'] == "student"){?>
+                            <a href="studentMain.php?link=1" <?php print (( $_GET && $_GET['link'] == 1)?'class="active"':'');?>>Home</a>
+                            <a href="registerStudent.php?link=2" <?php print (( $_GET && $_GET['link'] == 2)?'class="active"':'');?>>Register</a>
+                            <a href="logoutStudent.php">Logout</a>
+                            <?php 
+                            } // end if 
+                        elseif($_SESSION['login']['type'] == "teacher"){?>
+                            <a href="teacherMain.php?link=1" <?php print (( $_GET && $_GET['link'] == 1)?'class="active"':'');?>>Home</a>
+                            <a href="logoutTeacher.php">Logout</a>
+                            <?php 
+                            } // end if 
+                        elseif($_SESSION['login']['type'] == "admin"){?>
+                            <a href="adminMain.php?link=1" <?php print (( $_GET && $_GET['link'] == 1)?'class="active"':'');?>>Home</a>
+                            <a href="logoutAdmin.php">Logout</a>
+                            <?php 
+                            } // end if 
+
+?>
+                        </div>
+                </div>
+    
+                <div class="col-lg-9" >
+                    <div class="register_form">
+                        <!-- start -->
    
+<?php 
+} // end if not login page
+?>

@@ -12,10 +12,11 @@ class teacher
 	public $db;
 		
 	public function __set($property, $value){	
+		die("ok");
 		$this->property = $value;
 
 	} 
-	public function __get($property){	
+	public function __get($property){
 		return $this->property;
 	} 
 	
@@ -33,7 +34,7 @@ class teacher
 				  FROM  teacher 
 				  WHERE id = '".$this->id."'
 				        and password = '".$this->password."'" ;	 
-		print $query;
+	
 		//checking if the username is available in db
 
 		$resultSelectUser = ($this->db)->selectQuery($query);
@@ -43,9 +44,9 @@ class teacher
 		if ($count_row == 1){
 
 			foreach ($resultSelectUser as $admin) {
-				$_SESSION['login']['id'] =  $admin['id'];
-				$_SESSION['login']['name'] = $admin['firstName'];
-				$_SESSION['login']['type'] = 'teacher';
+				
+				
+				$this->setTeacher($admin);
 				} // end for 
 			return 1;
 			}
@@ -55,7 +56,17 @@ class teacher
 
 		} // end function
 
+public function setTeacher($data){
+	$this->id=$data['id'];
+	$this->firstName=$data['firstName'];
+	$this->middleName=$data['middleName'];
+	$this->lastName=$data['lastName'];
+	$this->email=$data['email'];
+	$this->mobileNumber=$data['mobileNumber'];
+	$this->password=$data['password'];
+	
 
+}
 
 
 	public function logout() {

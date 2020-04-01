@@ -9,13 +9,12 @@ $teacher1 = new teacher($db);
 $teacher1->id = $_POST['userId'];
 $teacher1->password =$_POST['pwd'];
 
-print $teacher1->password;
-print '<pre>';
-print_r($teacher1);
-print '</pre>';
-
 $result = $teacher1->verifyLogin();
+
 if( $result == 1 ){
+	$_SESSION['login']['id'] =  $teacher1->id;
+	$_SESSION['login']['name'] = $teacher1->FirstName;
+	$_SESSION['login']['type'] = 'teacher';
 	header("location:../view/teacherMain.php");
 	} // end if 
 else{
