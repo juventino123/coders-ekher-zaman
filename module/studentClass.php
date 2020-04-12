@@ -33,7 +33,6 @@ class student
 				  FROM  student 
 				  WHERE id = '".$this->id."'
 				        and password = '".$this->password."'" ;	 
-		print $query;
 		//checking if the username is available in db
 
 		$resultSelectUser = ($this->db)->selectQuery($query);
@@ -43,9 +42,7 @@ class student
 		if ($count_row == 1){
 
 			foreach ($resultSelectUser as $student) {
-				$_SESSION['login']['id'] =  $student['id'];
-				$_SESSION['login']['name'] = $student['firstName'];
-				$_SESSION['login']['type'] = 'student';
+				$this->setStudent($student);
 				} // end for 
 			return 1;
 			}
@@ -55,7 +52,17 @@ class student
 
 		} // end function
 
+public function setStudent($data){
+	$this->id=$data['id'];
+	$this->firstName=$data['firstName'];
+	$this->middleName=$data['middleName'];
+	$this->lastName=$data['lastName'];
+	$this->email=$data['email'];
+	$this->mobileNumber=$data['mobileNumber'];
+	$this->password=$data['password'];
+	
 
+}
 
 
 	public function logout() {

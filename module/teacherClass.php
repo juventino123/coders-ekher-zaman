@@ -45,7 +45,6 @@ class teacher
 
 			foreach ($resultSelectUser as $admin) {
 				
-				
 				$this->setTeacher($admin);
 				} // end for 
 			return 1;

@@ -32,17 +32,15 @@ class admin
 				        and password = '".$this->password."'" ;	 
 		
 		//checking if the username is available in db
-
+			        
 		$resultSelectUser = ($this->db)->selectQuery($query);
 		$count_row = count($resultSelectUser);
 
 		//if the check is correct put the admin's details in session
 		if ($count_row == 1){
 
-			foreach ($resultSelectUser as $admin) {
-				$_SESSION['login']['id'] =  $admin['id'];
-				$_SESSION['login']['name'] = $admin['name'];
-				$_SESSION['login']['type'] = 'admin';
+			foreach ($resultSelectUser as $admin1) {
+				$this->setAdmin($admin1);
 				} // end for 
 			return 1;
 			}
@@ -52,7 +50,13 @@ class admin
 
 		} // end function
 
-
+public function setAdmin($data){
+	$this->id=$data['id'];
+	$this->name=$data['name'];
+	$this->userName=$data['userName'];
+	$this->password=$data['password'];
+	
+}
 
 
 	public function logout() {

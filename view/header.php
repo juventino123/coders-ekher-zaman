@@ -1,169 +1,109 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="../img/favicon.png" type="image/png">
-    <title>Contact</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../vendors/linericon/style.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="../vendors/lightbox/simpleLightbox.css">
-    <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="../vendors/animate-css/animate.css">
-    <!-- main css -->
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ParkUni</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Reveal - v2.0.0
+  * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
 
-    <!--================ Start Header Menu Area =================-->
-    <header class="header_area">
-        <div class="header-top">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-sm-6 col-4 header-top-left">
-                        <a href="tel:+9530123654896">
-                            <span class="lnr lnr-phone"></span>
-                            <span class="text">
-                                <span class="text">+953012 3654 896</span>
-                            </span>
-                        </a>
-                        <a href="mailto:support@colorlib.com">
-                            <span class="lnr lnr-envelope"></span>
-                            <span class="text">
-                                <span class="text">support@colorlib.com</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-8 header-top-right">
-                        <a href="#" class="text-uppercase">Login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <div class="contact-info float-left">
+        <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+        <i class="fa fa-phone"></i> +1 5589 55488 55
+      </div>
+      <div class="social-links float-right">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar-->
 
-        <div class="main_menu">
-            <div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between" method="" action="">
-                        <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                        <button type="submit" class="btn"></button>
-                        <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-                    </form>
-                </div>
-            </div>
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
 
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                   <!-- <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="course-details.html">Course Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link search" id="search">
-                                    <i class="lnr lnr-magnifier"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>-->
-                </div>
-            </nav>
-        </div>
-    </header>
+      <div id="logo" class="pull-left">
+        <h1><a href="#topbar" class="scrollto">Park<span>Uni</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#topbar"><img src="../assets/img/logo.png" alt=""></a>-->
+      </div>
 
-    <?php 
-    // the menu doesn't appear in the login page
-    if(isset($_SESSION)){?>
-    <!--================ End Header Menu Area =================-->
-<style>
-    
+      <?php 
+       if( isset($_SESSION['login']) ){?>
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <?php 
+            switch ($_SESSION['login']['type']){
+              // display the menu % user type
+              case "student":
+                // display the menu of the student ?>
+                <li><a href="studentMain.php?link=1" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 1)?'class="menu-active"':'');?>>Main</a></li>
+                <li><a href="registerStudent.php?link=2" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 2)?'class="menu-active"':'');?>>Register</a></li>
+                <li><a href="studentCourseLoad.php?link=3" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 3)?'class="menu-active"':'');?>>Course Load</a></li>
 
-.vertical-menu a {
-  background-color: #eee; /* Grey background color */
-  color: black; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
-  margin:10px;
-  text-transform: uppercase;
-}
 
-.vertical-menu a:hover {
-  background-color: #ccc; /* Dark grey background on mouse-over */
-}
+                
+                <li><a href="logoutStudent.php">Logout</a></li>
+              <?php 
+              break;
+              case "teacher":
+                // display the menu of the teacher?>
+                <li><a href="teacherMain.php?link=1" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 1)?'class="menu-active"':'');?>>Main</a></li>
+                <li><a href="logoutTeacher.php">Logout</a></li>
+              <?php 
+              break;
+              case "admin":
+               // display the menu of the admin?>
+               <li><a href="teacherMain.php?link=1" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 1)?'class="menu-active"':'');?>>Main</a></li>
+               <li><a href="logoutAdmin.php">Logout</a></li>
+             <?php 
+              break;
 
-.vertical-menu a.active {
-  background-color: #00aee0; /* Add a green color to the "active/current" link */
-  color: white;
-}
-    </style>
-    <!--================ Start Registration Area =================-->
-    <div class="section_gap registration_area">
-        <div class="container-fluid" style="margin-bottom: 0px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    
-                        <div class="vertical-menu">
-                        <?php 
-                        if($_SESSION['login']['type'] == "student"){?>
-                            <a href="studentMain.php?link=1" <?php print (( $_GET && $_GET['link'] == 1)?'class="active"':'');?>>Home</a>
-                            <a href="registerStudent.php?link=2" <?php print (( $_GET && $_GET['link'] == 2)?'class="active"':'');?>>Register</a>
-                            <a href="logoutStudent.php">Logout</a>
-                            <?php 
-                            } // end if 
-                        elseif($_SESSION['login']['type'] == "teacher"){?>
-                            <a href="teacherMain.php?link=1" <?php print (( $_GET && $_GET['link'] == 1)?'class="active"':'');?>>Home</a>
-                            <a href="logoutTeacher.php">Logout</a>
-                            <?php 
-                            } // end if 
-                        elseif($_SESSION['login']['type'] == "admin"){?>
-                            <a href="adminMain.php?link=1" <?php print (( $_GET && $_GET['link'] == 1)?'class="active"':'');?>>Home</a>
-                            <a href="logoutAdmin.php">Logout</a>
-                            <?php 
-                            } // end if 
+            }?>
+          </ul>
+        </nav><!-- #nav-menu-container -->
+        <?php 
+      } // end if $_SESSION['login'] ?>
+    </div>
+  </header><!-- End Header -->
 
-?>
-                        </div>
-                </div>
-    
-                <div class="col-lg-9" >
-                    <div class="register_form">
-                        <!-- start -->
-   
-<?php 
-} // end if not login page
-?>
+  <main id="main">
