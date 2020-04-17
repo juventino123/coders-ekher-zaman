@@ -30,7 +30,7 @@ else{
 		print '<div class="row border">
 
 		<div class="col-2 border">'.$course['code'].'</div>
-		<div class="col-2 border">'.$course['name'].'</div>
+		<div class="col-2 border">'.$course['courseName'].'</div>
 		<div class="col-2 border">'.$course['numberOfCredits'].'</div>
 		<div class="col-2 border">'.$course['scheduleName'].'</div>
 		<div class="col-2 border">'.$course['firstName'].''.$course['lastName'].'</div>

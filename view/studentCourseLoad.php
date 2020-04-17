@@ -20,7 +20,7 @@ include "./header.php";
 
         <div class="row contact-info">
 
-          <div class="col-md-6">
+          <div class="col-md-12">
             
             <div class="contact-address">
 
@@ -30,14 +30,7 @@ include "./header.php";
            
           </div>
 
-          <div class="col-md-6">
-           
-             <div class="contact-phone">
-
-              <h3>SEMESTER : <?php print $_SESSION['currentSemesterName'];?></h3>
-              <h3>TOTAL CREDITS : <?php print $_SESSION['totalStudentCredits'];?></h3>
-              </div>
-          </div>
+          
 
          
 

@@ -5,8 +5,11 @@ function testAccess($type){
 		if($type == "student"){
 			header('location:studentLogin.php');
 			}
-		else{
+		elseif($type == "teacher"){
 			header('location:teacherLogin.php');
+			}
+		elseif($type == "admin"){
+			header('location:adminLogin.php');
 			}
 	}
 } // end function 
