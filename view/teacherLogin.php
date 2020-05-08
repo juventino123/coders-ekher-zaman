@@ -26,18 +26,18 @@
          <form action="../controller/verifyteacherLogin.php" name="form1" method="post" class="needs-validation">
           <div class="form-group">
             <label for="id">ID:</label>
-            <input type="text" name="userId" class="form-control form-control-lg" placeholder="Enter your ID" id="id" required/>
+            <input type="text" name="userId" class="form-control form-control-lg" placeholder="Enter your ID" id="id" required value="<?php if(isset($_COOKIE["member_login"])) { print $_COOKIE["member_login"]; } ?>"/>
            
             <div class="invalid-feedback">Please enter your ID.</div>
           </div>
           <div class="form-group">
             <label for="pwd">Password:</label>
-            <input type="password" name="pwd" class="form-control form-control-lg" placeholder="Enter password" id="pwd" required/>
+            <input type="password" name="pwd" class="form-control form-control-lg" placeholder="Enter password" id="pwd" required value="<?php if(isset($_COOKIE["member_password"])) { print $_COOKIE["member_password"]; } ?>"/>
             
     <div class="invalid-feedback">Please enter your Password.</div>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customRememberMe" name="rememberMe" value="1">
+            <input type="checkbox" class="custom-control-input" id="customRememberMe" name="rememberMe" value="1" <?php if(isset($_COOKIE["member_login"])) { print 'checked="checked"'; } ?>>
             <label class="custom-control-label" for="customRememberMe">Remember me</label>
           </div>
           <div class="text-center">

@@ -48,7 +48,7 @@ class registration
 		return 0;
 		
 	} 
-	// get the number of credits taked by the current student in the current semester
+	// get the number of credits taked by the current student in the nxt semester 
 	public function totalStudentCredits(){
 		
 		$query = 'SELECT sum(course.numberOfCredits) as nbCredits
@@ -56,7 +56,7 @@ class registration
 				  WHERE registration.courseOfferingId = courseoffering.id 
 				  and courseoffering.courseId = course.id
 				  and courseoffering.semesterId = semester.id 
-				  AND semester.currentSemester = 1
+				  AND semester.canRegister = 1
 				  AND registration.studentId = '.$this->studentId.'
 				  GROUP BY courseoffering.semesterId';	 
 	
