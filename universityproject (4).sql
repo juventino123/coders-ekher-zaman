@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 04, 2020 at 04:56 PM
+-- Generation Time: Apr 22, 2020 at 03:52 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -86,7 +86,17 @@ CREATE TABLE IF NOT EXISTS `courseoffering` (
   `scheduleId` int(11) NOT NULL,
   `teacherId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `courseoffering`
+--
+
+INSERT INTO `courseoffering` (`id`, `semesterId`, `courseId`, `scheduleId`, `teacherId`) VALUES
+(1, 60, 100305, 1, 80),
+(2, 60, 100306, 2, 81),
+(3, 61, 101202, 3, 80),
+(4, 61, 100400, 3, 81);
 
 -- --------------------------------------------------------
 
@@ -101,7 +111,16 @@ CREATE TABLE IF NOT EXISTS `registration` (
   `studentId` int(11) NOT NULL,
   `grade` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`id`, `courseOfferingId`, `studentId`, `grade`) VALUES
+(1, 1, 20183020, 0),
+(2, 2, 20183020, 10),
+(22, 3, 20183020, 0);
 
 -- --------------------------------------------------------
 
@@ -152,6 +171,8 @@ CREATE TABLE IF NOT EXISTS `semester` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `startingDate` date NOT NULL,
   `endingDate` date NOT NULL,
+  `currentSemester` tinyint(1) NOT NULL DEFAULT '0' COMMENT '=1 if this semester is the current semester',
+  `canRegister` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -159,9 +180,9 @@ CREATE TABLE IF NOT EXISTS `semester` (
 -- Dumping data for table `semester`
 --
 
-INSERT INTO `semester` (`id`, `name`, `startingDate`, `endingDate`) VALUES
-(60, 'Fall2019', '2019-10-01', '2020-01-31'),
-(61, 'Spring2020', '2020-02-17', '2020-06-17');
+INSERT INTO `semester` (`id`, `name`, `startingDate`, `endingDate`, `currentSemester`, `canRegister`) VALUES
+(60, 'Fall2019', '2019-10-01', '2020-01-31', 0, 0),
+(61, 'Spring2020', '2020-02-17', '2020-06-17', 1, 1);
 
 -- --------------------------------------------------------
 
