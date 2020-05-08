@@ -69,5 +69,93 @@ public function selectCourseOffering($studentId){
 		// no result
 		return 0;
 	} // end function
+	
+	// check if the current course has a time conflict with another course
+	public function checkCourseOfferingExist(){
+		
+		$query = 'SELECT *
+				  FROM  courseoffering ,course, semester, schedule, teacher  
+				  WHERE courseoffering.courseId = course.id
+				  AND courseoffering.semesterId = semester.id 
+				  AND courseoffering.scheduleId = schedule.id 
+				  AND courseoffering.teacherId = teacher.id
+				  AND semester.canRegister =1
+				  AND courseoffering.teacherId = '.$this->teacherId.'
+				  AND courseoffering.scheduleId =  '.$this->scheduleId.'
+				  AND courseoffering.courseId =  '.$this->courseId;	 
+			
+		$resultCourseOffered = ($this->db)->selectQuery($query);
+		$count_row = count($resultCourseOffered); 
+	
+		// the current course is already added with the same teacher and the same schedule
+		if ($count_row >0){
+			return 1;
+		} // end if
+		else{
+
+			return 0;
+		} // end else
+	} // end function
+
+		public function addCourse(){
+		
+		// add the courseoffering if the courseoffering doesn't exist
+		if( !$this->checkCourseOfferingExist()){	
+			$query = 'INSERT INTO courseOffering(semesterId,courseId,scheduleId,teacherId)
+					  VALUES('.$this->semesterId.',
+							  '.$this->courseId.',
+							  '.$this->scheduleId.',
+							  '.$this->teacherId.')';	 
+		
+			$resultInsert = ($this->db)->executeQuery($query);
+
+			return 1;
+			}
+		else{
+			return 0;
+			}
+			
+
+	} // end function
+		//
+		public function selectCourseOffered(){
+		
+		$query = 'SELECT *,schedule.name as scheduleName, course.name as courseName,Courseoffering.id as courseOfferingID
+				  FROM  courseoffering ,course, semester, schedule, teacher  
+				  WHERE courseoffering.courseId = course.id
+				  AND courseoffering.semesterId = semester.id 
+				  AND courseoffering.scheduleId = schedule.id 
+				  AND courseoffering.teacherId = teacher.id
+				  AND semester.canRegister =1';	 
+			
+		$resultCourseOffered = ($this->db)->selectQuery($query);
+		$count_row = count($resultCourseOffered);
+
+		// there's a result
+		if ($count_row > 0){
+			return $resultCourseOffered;
+
+		} // end if
+		
+		// no result
+		return 0;
+		
+	}
+// delete a course 
+	public function deleteCourse(){
+		
+		
+			// delete a courseoffering 
+			$query = 'DELETE 
+					  FROM  courseOffering
+					  WHERE id = '.$this->id;
+
+			$resultSelectUser = ($this->db)->executeQuery($query);
+			return 1;
+		
+		
+	} // end function
+	
+	
 } // end class
 ?>	

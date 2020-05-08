@@ -22,7 +22,7 @@ include "./header.php";
             
             <div class="box wow fadeInLeft">
               <div class="icon"><i class="fa fa-registered"></i></div>
-              <h4 class="title"><a href="#">XXX</a></h4>
+              <h4 class="title"><a href="CourseOfferingAdmin.php">CourseOfferingAdmin</a></h4>
               
             </div>
             

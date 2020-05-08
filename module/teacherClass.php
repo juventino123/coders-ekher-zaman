@@ -72,5 +72,24 @@ public function setTeacher($data){
 		$_SESSION['login'] = FALSE;
 		session_destroy();
 	}
+	
+	
+	
+	
+	
+	
+	public function selectAllTeacher(){
+
+			$query = 'SELECT *
+					  FROM  teacher 
+					  Order By firstName ASC,lastName ASC' ;	 
+			
+						
+			$resultSelectTeacher = ($this->db)->selectQuery($query);
+			return $resultSelectTeacher;
+
+		
+	} // end function 
+	
 }
 ?>

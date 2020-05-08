@@ -1,12 +1,9 @@
 <?php
 
-class course
+class schedule
 {
 	public $id;
-	public $code;
 	public $name;
-	public $numberOfCredits;
-	public $description;
 	
 	public function __set($property, $value){	
 		
@@ -24,15 +21,15 @@ class course
 		$this->db = $db;
 	}
 
-	public function selectAllCourse(){
+	public function selectAllSchedule(){
 
 			$query = 'SELECT *
-					  FROM  course 
-					  Order By name Asc' ;	 
+					  FROM  schedule 
+					  Order By name ASC' ;	 
 			
 						
-			$resultSelectCourse = ($this->db)->selectQuery($query);
-			return $resultSelectCourse;
+			$resultSelectSchedule = ($this->db)->selectQuery($query);
+			return $resultSelectSchedule;
 
 		
 	} // end function 

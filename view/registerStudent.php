@@ -87,7 +87,7 @@ $db = new DatabaseManager();
       </div>
       
       <?php 
-    } // en for
+    } // end for
   }
   else{
        print '<div class="row border"><div class="col-12><div class="alert alert-danger" role="alert">No result</div></div></div>';
@@ -168,18 +168,18 @@ $db = new DatabaseManager();
 
 
     </section><!-- End Contact Section -->
-<script>
-$(document).ready(function(){
-  $('#myModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget); // Button that triggered the modal
-  var x = button.data('whatever'); // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
- 
-  var modal = $(this);
-  
-  modal.find('.modal-body #course_id').val(x);
-});
+		<script>
+		$(document).ready(function(){
+		  $('#myModal').on('show.bs.modal', function (event) {
+		  var button = $(event.relatedTarget); // Button that triggered the modal
+		  var x = button.data('whatever'); // Extract info from data-* attributes
+		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		 
+		  var modal = $(this);
+		  
+		  modal.find('.modal-body #course_id').val(x);
+		});
 
 $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();

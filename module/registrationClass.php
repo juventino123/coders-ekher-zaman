@@ -48,6 +48,35 @@ class registration
 		return 0;
 		
 	} 
+	
+		// get the number of credits taked by the current student in the current semester
+	public function selectAdminCourseRegistered($semesterId){
+		
+		$query = 'SELECT *,schedule.name as scheduleName, course.name as courseName,registration.id as registrationID
+				  FROM  registration, courseoffering ,course, semester, schedule, teacher  
+				  WHERE registration.courseOfferingId = courseoffering.id 
+				  AND courseoffering.courseId = course.id
+				  AND courseoffering.semesterId = semester.id 
+				  AND courseoffering.scheduleId = schedule.id 
+				  AND courseoffering.teacherId = teacher.id
+				  AND semester.id = '.$semesterId.'
+				  AND registration.studentId = '.$this->studentId;	 
+			
+		$resultRegisteredCourses = ($this->db)->selectQuery($query);
+		$count_row = count($resultRegisteredCourses);
+
+		// there's a result
+		if ($count_row > 0){
+			return $resultRegisteredCourses;
+
+		} // end if
+		
+		// no result
+		return 0;
+		
+	} 
+	
+	
 	// get the number of credits taked by the current student in the current semester
 	public function totalStudentCredits(){
 		
