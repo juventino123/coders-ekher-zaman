@@ -2,18 +2,18 @@
 
 class DatabaseManager{
 //local	
-	/*private $dbHost = '127.0.0.1';
+	private $dbHost = '127.0.0.1';
 	private $dbUser = 'root';
 	private $dbPassword = '';
-	private $dbName = 'universityproject';*/
+	private $dbName = 'universityproject';
 	
 // online
 
-	private $dbHost = 'localhost';
+	/*private $dbHost = 'localhost';
 	private $dbUser = 'id12609868_root';
 	private $dbPassword = 'C@oQLPI3^H8*U]Pd';
 	private $dbName = 'id12609868_universityproject';
-
+*/
 	//constructor
 	public function __construct(){}
 	
