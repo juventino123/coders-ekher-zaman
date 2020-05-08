@@ -2,6 +2,10 @@
 session_start();
 require_once "../module/functions.php";
 testAccess("teacher");
+
+
+
+
 include "./header.php";
 ?>
 <!-- ======= Services Section ======= -->
@@ -21,8 +25,8 @@ include "./header.php";
           <div class="col-lg-6">
             
             <div class="box wow fadeInLeft">
-              <div class="icon"><i class="fa fa-registered"></i></div>
-              <h4 class="title"><a href="#">XXX</a></h4>
+              <div class="icon"><i class="fa fa-info-circle"></i></div>
+              <h4 class="title"><a href="teacherCourseLoad.php">Course Load</a></h4>
               
             </div>
             
@@ -32,8 +36,8 @@ include "./header.php";
             
             <div class="box wow fadeInRight">
               
-              <div class="icon"><i class="fa fa-info-circle"></i></div>
-              <h4><a href="#">YYYY</a></h4>
+              <div class="icon"><i class="fa fa-pencil fa-fw"></i></div>
+              <h4><a href="teacherCourseLoadGrading.php">Final Grades</a></h4>
              
             </div>
             
