@@ -42,6 +42,32 @@ class courseoffering
 
 		return 0;
 	} // end function getCourseNbCredits
+  
+  
+
+  public function selectCourseOfferingTeacher($semId){
+  		
+    // echo "<br>SemesterID = " . $semId . "<br>";
+    // echo "<br>TeacherID = " . $this->teacherId . "<br>";
+    
+    $query = 'SELECT *, courseOffering.id as courseOfferingId, courseOffering.courseId as courseOfferingCourseId, course.id as courseId, course.code as courseCode, course.name as courseName, courseOffering.scheduleId as scheduleId, schedule.name as scheduleName 
+              FROM ((courseOffering INNER JOIN course ON courseOffering.courseId = course.id) INNER JOIN schedule ON courseOffering.scheduleId = schedule.id) 
+              WHERE ((courseOffering.teacherID ='.$this->teacherId.') AND (courseOffering.semesterID ='. $semId . '))';
+      
+    $resultCourses = ($this->db)->selectQuery($query);
+		$count_row = count($resultCourses);
+
+		// there's a result
+		if ($count_row > 0){
+			return $resultCourses;
+
+		} // end if
+    
+		// no result
+		return 0;
+  
+  } // end function selectCourseOfferingTeacher
+  
 
 public function selectCourseOffering($studentId){
 
