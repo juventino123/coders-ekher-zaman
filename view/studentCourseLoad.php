@@ -49,6 +49,7 @@ $resultSelectSemester = $semester1->selectAllSemester();
     <div class="form-row">
       <div class="form-group col-md-6">
       <select id="semesterBtn" name="semester" class="custom-select">
+        <option value="0">Select a semester</option>
         <?php 
 
         foreach ($resultSelectSemester as $semester) {

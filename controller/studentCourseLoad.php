@@ -14,8 +14,10 @@ if(empty($result) ){
 	 print '<div class="container alert alert-danger" role="alert">No result Found</div>';
 }
 else{
-	print '<div class="container">
-      
+	$nbCurrentStudentCredits = $registration1->totalStudentCreditsPerSemester($_POST['semester']);
+	print '<div class="container">';
+      	print '<h4>Total Credits : '.$nbCurrentStudentCredits.' credits</h4>
+
       <div class="row border row-title-green">
         <div class="col-2 border">Code</div>
         <div class="col-2 border">Course</div>

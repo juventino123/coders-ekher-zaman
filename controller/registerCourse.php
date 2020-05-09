@@ -13,7 +13,7 @@ $semesterId = $_SESSION['currentSemesterId'];
 $result = $registration1->registerCourse($semesterId);
 
 if( $result == 1 ){
-	
+
 	header("location:../view/registerStudent.php");
 	} // end if 
 else{

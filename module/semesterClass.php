@@ -52,6 +52,21 @@ class semester
 
 		
 	} // end function 
+
+	// select next semester to register
+	public function selectCanRegisterSemester(){
+
+		$query = 'SELECT *
+				  FROM  semester 
+				  WHERE canRegister = 1' ;	 
+		
+		//checking if the username is available in db
+			        
+		$resultCurrentSemester = ($this->db)->selectQuery($query);
+		return $resultCurrentSemester;
+
+		
+	} // end function 
 	
 } // end class
 ?>

@@ -21,7 +21,40 @@ class registration
     	
 		$this->db = $db;
 	}
-	
+	public function selectRegisteredStudentsInCourse($chosenCourseOfferingId)
+  {
+        $query = 'SELECT *, registration.studentId as registrationStudentId, registration.grade as registrationStudentGrade, student.firstName as studentFirstName, student.middleName as studentMiddleName, student.lastName as studentLastName, student.email as studentEmail 
+                  FROM registration INNER JOIN student ON registration.studentId = student.id 
+                  WHERE (registration.courseOfferingId = '.$chosenCourseOfferingId.')'; 
+      
+		$resultRegisteredStudents = ($this->db)->selectQuery($query);
+		$count_row = count($resultRegisteredStudents);
+
+		// there's a result
+		if ($count_row > 0){
+			return $resultRegisteredStudents;
+
+		} // end if
+		
+		// no result
+		return 0;
+    
+  
+  }
+
+  // Updating the student's final grade by the teacher of the course
+  // the student grade is sent as a parameter
+  public function updateGrade($newGrade){
+
+      $query = 'UPDATE registration 
+                SET registration.grade='. $newGrade . '
+                WHERE ((registration.studentId = ' . $this->studentId . ') AND (registration.courseOfferingID =' . $this->courseOfferingId . '))';
+      
+      $resultSelectUser = ($this->db)->executeQuery($query);
+      
+			return 1; // grade is updated with the new grade
+
+  }
 	// get the number of credits taked by the current student in the current semester
 	public function selectCourseRegistered($semesterId){
 		
@@ -48,9 +81,8 @@ class registration
 		return 0;
 		
 	} 
-<<<<<<< HEAD
 	
-		// get the number of credits taked by the current student in the current semester
+	// get the number of credits taked by the current student in the current semester
 	public function selectAdminCourseRegistered($semesterId){
 		
 		$query = 'SELECT *,schedule.name as scheduleName, course.name as courseName,registration.id as registrationID
@@ -78,10 +110,7 @@ class registration
 	} 
 	
 	
-	// get the number of credits taked by the current student in the current semester
-=======
 	// get the number of credits taked by the current student in the nxt semester 
->>>>>>> e68f0a0834d192ae29eebcdd50d06ede7f4a7d2c
 	public function totalStudentCredits(){
 		
 		$query = 'SELECT sum(course.numberOfCredits) as nbCredits
@@ -132,12 +161,16 @@ class registration
 	public function checkCourseSchedule(){
 		
 		$query = 'SELECT *
-				  FROM  registration, courseoffering , semester  
+				  FROM  registration, courseoffering , semester , schedule 
 				  WHERE registration.courseOfferingId = courseoffering.id 
 				  and courseoffering.semesterId = semester.id 
-				  AND semester.currentSemester = 1
+				  and courseoffering.scheduleId=schedule.id
+				  AND semester.canRegister = 1
+				  and courseoffering.scheduleId in( select scheduleId
+				  									from courseoffering
+				  									where courseoffering.id = '.$this->courseOfferingId.'
+				  									)
 				  AND registration.studentId = '.$this->studentId.'
-				  AND courseoffering.id != '.$this->courseOfferingId.'
 				  GROUP BY courseoffering.semesterId';	 
 	
 		
@@ -162,7 +195,6 @@ class registration
 		// 1- test if the student can register (nb credits < 18 )
 		
 		$nbCurrentStudentCredits = $this->totalStudentCreditsPerSemester($semesterId);
-		
 		// 2- get nb_credits of the CURRENT course 
 		
 		$course1 = new courseoffering($this->db);
@@ -170,8 +202,8 @@ class registration
 		$nbCurrentCourseCredits = $course1->getCourseNbCredits();
 
 		$totalCredits = $nbCurrentStudentCredits + $nbCurrentCourseCredits;
-
-		if( $totalCredits < 18 ){
+	
+		if( $totalCredits <= 18 ){
 			// 3 - checkCourseSchedule
 			$resultConflict = $this->checkCourseSchedule();
 

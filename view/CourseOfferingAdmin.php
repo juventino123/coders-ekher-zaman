@@ -1,4 +1,3 @@
-<html>
 <?php
 session_start();
 require_once "../module/functions.php";
@@ -23,7 +22,6 @@ include "./header.php";
 
 
 <!-- Start Align Area -->
-<body>
     <div id="main2">
 <?php 
 // select all the semesters
@@ -116,7 +114,7 @@ $resultSelectSchedule = $schedule1->selectAllSchedule();
 <div class="container">
     <?php 
     if( $_GET && isset($_GET['errorMsg']) && $_GET['errorMsg'] == 1 ){
-      print '<div class="alert alert-danger" role="alert">the course offering is already added</div>';
+      print '<div class="alert alert-danger" role="alert">There is a course added with the same teacher and the same schedule, choose another teacher or change the schedule</div>';
       } // end if ?>
 
       <h2 class="text-left">Course offering</h2>

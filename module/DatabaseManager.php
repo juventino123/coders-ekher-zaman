@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 class DatabaseManager{
 //local	
@@ -12,15 +15,14 @@ class DatabaseManager{
 	/*private $dbHost = 'localhost';
 	private $dbUser = 'id12609868_root';
 	private $dbPassword = 'C@oQLPI3^H8*U]Pd';
-	private $dbName = 'id12609868_universityproject';
-*/
+	private $dbName = 'id12609868_universityproject';*/
 	//constructor
 	public function __construct(){}
 	
 	//connection to the database
 	public function connectToDb()
 	{
-		$dbConnection = mysqli_connect($this->dbHost,$this->dbUser,$this->dbPassword,$this->dbName);
+		$dbConnection = mysqli_connect($this->dbHost,$this->dbUser,$this->dbPassword,$this->dbName) or die('can\'t connect to the db');
 		return $dbConnection;
 	}
 	
@@ -29,6 +31,7 @@ class DatabaseManager{
 	{
 		$dbConnection = $this->connectToDb();
 		$result = mysqli_query($dbConnection,$query);
+		//echo $query."<br>";
 		if(mysqli_error($dbConnection))
 		{
 			echo "error " .mysqli_error($dbConnection);

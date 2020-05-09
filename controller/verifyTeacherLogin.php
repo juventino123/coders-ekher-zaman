@@ -26,7 +26,7 @@ if( $result == 1 ){
 	}
 
 	$_SESSION['login']['id'] =  $teacher1->id;
-	$_SESSION['login']['name'] = $teacher1->FirstName;
+	$_SESSION['login']['name'] = $teacher1->firstName;
 	$_SESSION['login']['type'] = 'teacher';
 	header("location:../view/teacherMain.php");
 	} // end if 

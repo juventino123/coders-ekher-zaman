@@ -32,7 +32,6 @@ class courseoffering
 				  WHERE  course.id = courseoffering.courseId
 				  and courseoffering.id = '.$this->id;
 				 
-	echo $query;
 		//checking if the username is available in db
 
 		$resultCountCredits = ($this->db)->selectQuery($query);
@@ -50,9 +49,9 @@ class courseoffering
     // echo "<br>SemesterID = " . $semId . "<br>";
     // echo "<br>TeacherID = " . $this->teacherId . "<br>";
     
-    $query = 'SELECT *, courseOffering.id as courseOfferingId, courseOffering.courseId as courseOfferingCourseId, course.id as courseId, course.code as courseCode, course.name as courseName, courseOffering.scheduleId as scheduleId, schedule.name as scheduleName 
-              FROM ((courseOffering INNER JOIN course ON courseOffering.courseId = course.id) INNER JOIN schedule ON courseOffering.scheduleId = schedule.id) 
-              WHERE ((courseOffering.teacherID ='.$this->teacherId.') AND (courseOffering.semesterID ='. $semId . '))';
+    $query = 'SELECT *, courseoffering.id as courseOfferingId, courseoffering.courseId as courseOfferingCourseId, course.id as courseId, course.code as courseCode, course.name as courseName, courseoffering.scheduleId as scheduleId, schedule.name as scheduleName 
+              FROM ((courseoffering INNER JOIN course ON courseoffering.courseId = course.id) INNER JOIN schedule ON courseoffering.scheduleId = schedule.id) 
+              WHERE ((courseoffering.teacherID ='.$this->teacherId.') AND (courseoffering.semesterID ='. $semId . '))';
       
     $resultCourses = ($this->db)->selectQuery($query);
 		$count_row = count($resultCourses);
@@ -107,13 +106,12 @@ public function selectCourseOffering($studentId){
 				  AND courseoffering.teacherId = teacher.id
 				  AND semester.canRegister =1
 				  AND courseoffering.teacherId = '.$this->teacherId.'
-				  AND courseoffering.scheduleId =  '.$this->scheduleId.'
-				  AND courseoffering.courseId =  '.$this->courseId;	 
+				  AND courseoffering.scheduleId =  '.$this->scheduleId;	 
 			
 		$resultCourseOffered = ($this->db)->selectQuery($query);
 		$count_row = count($resultCourseOffered); 
 	
-		// the current course is already added with the same teacher and the same schedule
+		// there is a course added with the same teacher and the same schedule
 		if ($count_row >0){
 			return 1;
 		} // end if
@@ -127,7 +125,7 @@ public function selectCourseOffering($studentId){
 		
 		// add the courseoffering if the courseoffering doesn't exist
 		if( !$this->checkCourseOfferingExist()){	
-			$query = 'INSERT INTO courseOffering(semesterId,courseId,scheduleId,teacherId)
+			$query = 'INSERT INTO courseoffering(semesterId,courseId,scheduleId,teacherId)
 					  VALUES('.$this->semesterId.',
 							  '.$this->courseId.',
 							  '.$this->scheduleId.',
@@ -146,7 +144,7 @@ public function selectCourseOffering($studentId){
 		//
 		public function selectCourseOffered(){
 		
-		$query = 'SELECT *,schedule.name as scheduleName, course.name as courseName,Courseoffering.id as courseOfferingID
+		$query = 'SELECT *,schedule.name as scheduleName, course.name as courseName,courseoffering.id as courseOfferingID
 				  FROM  courseoffering ,course, semester, schedule, teacher  
 				  WHERE courseoffering.courseId = course.id
 				  AND courseoffering.semesterId = semester.id 
@@ -173,7 +171,7 @@ public function selectCourseOffering($studentId){
 		
 			// delete a courseoffering 
 			$query = 'DELETE 
-					  FROM  courseOffering
+					  FROM  courseoffering
 					  WHERE id = '.$this->id;
 
 			$resultSelectUser = ($this->db)->executeQuery($query);
@@ -182,6 +180,5 @@ public function selectCourseOffering($studentId){
 		
 	} // end function
 	
-	
 } // end class
-?>	
+?>

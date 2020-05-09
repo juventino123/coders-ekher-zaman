@@ -1,3 +1,0 @@
-ALTER TABLE `semester` ADD `currentSemester` BOOLEAN NOT NULL DEFAULT FALSE COMMENT '=1 if this semester is the current semester' AFTER `endingDate`;
-UPDATE `semester` SET `currentSemester` = '1' WHERE `semester`.`id` = 61;
-ALTER TABLE `semester` ADD `canRegister` INT NOT NULL DEFAULT '1' AFTER `currentSemester`;

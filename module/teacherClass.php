@@ -12,7 +12,6 @@ class teacher
 	public $db;
 		
 	public function __set($property, $value){	
-		die("ok");
 		$this->property = $value;
 
 	} 

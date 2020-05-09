@@ -22,22 +22,13 @@ include "./header.php";
             
             <div class="box wow fadeInLeft">
               <div class="icon"><i class="fa fa-registered"></i></div>
-              <h4 class="title"><a href="CourseOfferingAdmin.php">CourseOfferingAdmin</a></h4>
+              <h4 class="title"><a href="courseOfferingAdmin.php">CourseOfferingAdmin</a></h4>
               
             </div>
             
           </div>
 
-          <div class="col-lg-6">
-            
-            <div class="box wow fadeInRight">
-              
-              <div class="icon"><i class="fa fa-info-circle"></i></div>
-              <h4><a href="#">YYYY</a></h4>
-             
-            </div>
-            
-          </div>
+        
 
          
 

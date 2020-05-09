@@ -23,7 +23,7 @@
               
            
   
-         <form action="../controller/verifyteacherLogin.php" name="form1" method="post" class="needs-validation">
+         <form action="../controller/verifyTeacherLogin.php" name="form1" method="post" class="needs-validation">
           <div class="form-group">
             <label for="id">ID:</label>
             <input type="text" name="userId" class="form-control form-control-lg" placeholder="Enter your ID" id="id" required value="<?php if(isset($_COOKIE["member_login"])) { print $_COOKIE["member_login"]; } ?>"/>

@@ -5,11 +5,31 @@ testAccess("student");
 include "./header.php";
 require_once "../module/registrationClass.php";
 require_once "../module/courseOfferingClass.php";
+require_once('../module/semesterClass.php');
 
 require_once('../module/DatabaseManager.php');
 
 // create an object of the db class 
 $db = new DatabaseManager();
+
+// put the nb of credits of the current user in session
+
+  // get the number of credits of the current user
+  $registration1 = new registration($db);
+  
+  $registration1->studentId = $_SESSION['login']['id'];
+
+  $resultTotalCredits = $registration1->totalStudentCredits(); 
+  $_SESSION['totalStudentCredits'] = 0 + $resultTotalCredits;
+
+  // put the current semester in session 
+  $semester1 = new semester($db);
+  $resultSelectSemester = $semester1->selectCanRegisterSemester(); 
+  foreach ($resultSelectSemester as $semester) {
+    $_SESSION['currentSemesterName'] = $semester['name'];
+    $_SESSION['currentSemesterId'] = $semester['id'];
+    } // end for  
+
 
 ?>
      <!-- ======= Contact Section ======= -->

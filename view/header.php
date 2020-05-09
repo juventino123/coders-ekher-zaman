@@ -88,12 +88,16 @@
               case "teacher":
                 // display the menu of the teacher?>
                 <li><a href="teacherMain.php?link=1" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 1)?'class="menu-active"':'');?>>Main</a></li>
+                <li><a href="teacherCourseLoad.php?link=2" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 2)?'class="menu-active"':'');?>>Course Load</a></li>
+                <li><a href="teacherCourseLoadGrading.php?link=3" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 3)?'class="menu-active"':'');?>>Final Grades</a></li>
                 <li><a href="logoutTeacher.php">Logout</a></li>
               <?php 
               break;
               case "admin":
                // display the menu of the admin?>
-               <li><a href="teacherMain.php?link=1" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 1)?'class="menu-active"':'');?>>Main</a></li>
+               <li><a href="adminMain.php?link=1" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 1)?'class="menu-active"':'');?>>Main</a></li>
+               <li><a href="courseOfferingAdmin.php?link=2" <?php print (( $_GET && isset($_GET['link']) && $_GET['link'] == 2)?'class="menu-active"':'');?>>Course Offering</a></li>
+  
                <li><a href="logoutAdmin.php">Logout</a></li>
              <?php 
               break;
