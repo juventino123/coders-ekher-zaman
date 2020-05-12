@@ -21,9 +21,10 @@ include "./header.php";
           <div class="col-lg-6">
             
             <div class="box wow fadeInLeft">
+              <a href="courseOfferingAdmin.php">
               <div class="icon"><i class="fa fa-registered"></i></div>
-              <h4 class="title"><a href="courseOfferingAdmin.php">CourseOfferingAdmin</a></h4>
-              
+              <h4 class="title text-secondary">CourseOfferingAdmin</h4>
+              </a>
             </div>
             
           </div>

@@ -1,4 +1,10 @@
  <?php 
+ session_start();
+ require_once "../module/functions.php";
+
+ // this function redirect the user to main if he is logged in
+redirectToMain();
+
  require_once('header.php');?>
   <!-- ======= Intro Section ======= -->
   <section id="intro">

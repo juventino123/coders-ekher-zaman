@@ -1,4 +1,9 @@
- <?php 
+<?php
+session_start();
+require_once "../module/functions.php";
+
+// if the user is already logged in redirect him directely to main
+redirectLoginToMain("student");
  require_once('header.php');
 ?>
 <main id="main">

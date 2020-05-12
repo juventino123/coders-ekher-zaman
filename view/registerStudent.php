@@ -119,9 +119,7 @@ $db = new DatabaseManager();
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="icon-box">
-          <i class="material-icons">&#xE5CD;</i>
-        </div>        
+               
         <h4 class="modal-title">Are you sure?</h4>  
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
@@ -166,7 +164,7 @@ $db = new DatabaseManager();
       foreach ($result as $course) {?>
 
        
-        <div class="row border">
+        <div class="row border" id="divrow">
       
         <div class="col-2 border"><?php print $course['code'];?></div>
         <div class="col-2 border"><?php print $course['courseName'];?></div>
@@ -203,7 +201,7 @@ $db = new DatabaseManager();
 
 $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#myDIV *").filter(function() {
+    $("#myDIV #divrow").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });

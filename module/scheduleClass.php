@@ -25,7 +25,7 @@ class schedule
 
 			$query = 'SELECT *
 					  FROM  schedule 
-					  Order By name ASC' ;	 
+					  Order By id ASC' ;	 
 			
 						
 			$resultSelectSchedule = ($this->db)->selectQuery($query);

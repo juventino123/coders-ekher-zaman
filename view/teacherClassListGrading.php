@@ -77,6 +77,7 @@ $resultRegisteredStudents = $registration1->selectRegisteredStudentsInCourse($_S
 // NOTE maybe have to put these in controller
 
 if(empty($resultRegisteredStudents) ){
+
 	 print '<div class="container alert alert-danger" role="alert">No result Found</div>';
 }
 else{
@@ -84,7 +85,7 @@ else{
         print '<div id="result1"></div>';
         
 	print '<div class="container">
-      
+      <a href="teacherCourseLoadGrading.php?link=3" class="text-secondary"><strong>Back To All Courses</strong></a>
       <div class="row border row-title-green">
         <div class="col-2 border">Student ID</div>
         <div class="col-2 border">First Name</div>
@@ -155,7 +156,7 @@ else{
         
         <?php
         
-        print '<div class="col-2 border"><center><input type="button" class="btnUpdateGrade" id="btn-' . $studentRegistration['registrationStudentId'] . '" value="Update"></input></center></div>';
+        print '<div class="col-2 border"><center><input type="button" class="btnUpdateGrade  btn-danger text-white" id="btn-' . $studentRegistration['registrationStudentId'] . '" value="Update"></input></center></div>';
         
         // print '<div class="col-2 border"><center><a href="../controller/teacherClassListGrading.php?registrationStudentId=' . $studentRegistration['registrationStudentId'] . '&newGrade=70" class="btn btn-info btn-sm" role="button"><i class="ion-ios-add-outline"></i>Update</a></center></div>';
         

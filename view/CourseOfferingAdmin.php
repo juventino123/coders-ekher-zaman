@@ -26,7 +26,7 @@ include "./header.php";
 <?php 
 // select all the semesters
 $semester1 = new semester($db);
-$resultSelectSemester = $semester1->selectAllSemester();  
+$resultSelectSemester = $semester1->selectNextSemester();  
 
 // select all the teachers
 $teacher1 = new teacher($db);
@@ -103,7 +103,7 @@ $resultSelectSchedule = $schedule1->selectAllSchedule();
 				</div>
 			</div>
 			<div class="form-group">
-				<input type="submit" class="primary-btn" style="float:right" value="Add">			
+				<input type="submit" class="btn  btn-info" style="float:right" value="Add">			
 			</div>
 		</form>
 	</div>
@@ -130,7 +130,7 @@ $resultSelectSchedule = $schedule1->selectAllSchedule();
       
        <?php
        // get the offered courses 
-       $courseOffering1 = new courseOffering($db);
+      $courseOffering1 = new courseOffering($db);
       $result = $courseOffering1->selectCourseOffered();
 
     if(!empty($result)){
@@ -160,9 +160,7 @@ $resultSelectSchedule = $schedule1->selectAllSchedule();
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="icon-box">
-          <i class="material-icons">&#xE5CD;</i>
-        </div>        
+             
         <h4 class="modal-title">Are you sure?</h4>  
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>

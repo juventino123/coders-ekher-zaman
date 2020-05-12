@@ -24,6 +24,21 @@ class semester
 		$this->db = $db;
 	}
 	
+	public function selectNextSemester(){
+
+		$query = 'SELECT *
+				  FROM  semester 
+				  Order By id DESC
+				  LIMIT 1' ;	 
+		
+		//checking if the username is available in db
+			        
+		$resultSelectSemester = ($this->db)->selectQuery($query);
+		return $resultSelectSemester;
+
+		
+	} // end function 
+
 	public function selectAllSemester(){
 
 		$query = 'SELECT *

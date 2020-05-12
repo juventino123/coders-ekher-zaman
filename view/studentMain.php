@@ -22,9 +22,10 @@ include "./header.php";
           <div class="col-lg-6">
             
             <div class="box wow fadeInLeft">
+              <a href="registerStudent.php">
               <div class="icon"><i class="fa fa-registered"></i></div>
-              <h4 class="title"><a href="registerStudent.php">Register</a></h4>
-              
+              <h4 class="title text-secondary">Register</h4>
+              </a>
             </div>
             
           </div>
@@ -32,9 +33,10 @@ include "./header.php";
           <div class="col-lg-6">
             
             <div class="box wow fadeInRight">
-              
+              <a href="studentCourseLoad.php">
               <div class="icon"><i class="fa fa-info-circle"></i></div>
-              <h4><a href="studentCourseLoad.php">Course Load</a></h4>
+              <h4 class="title text-secondary">Course Load</h4>
+              </a>
              
             </div>
             

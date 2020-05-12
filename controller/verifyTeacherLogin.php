@@ -28,7 +28,7 @@ if( $result == 1 ){
 	}
 
 	$_SESSION['login']['id'] =  $teacher1->id;
-	$_SESSION['login']['name'] = $teacher1->firstName;
+	$_SESSION['login']['name'] = $teacher1->firstName.' '.$teacher1->lastName;
 	$_SESSION['login']['type'] = 'teacher';
 
 	// put the current semester in session 

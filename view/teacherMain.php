@@ -25,8 +25,9 @@ include "./header.php";
           <div class="col-lg-6">
             
             <div class="box wow fadeInLeft">
+              <a href="teacherCourseLoad.php">
               <div class="icon"><i class="fa fa-info-circle"></i></div>
-              <h4 class="title"><a href="teacherCourseLoad.php">Course Load</a></h4>
+              <h4 class="title text-secondary">Course Load</h4></a>
               
             </div>
             
@@ -35,9 +36,9 @@ include "./header.php";
           <div class="col-lg-6">
             
             <div class="box wow fadeInRight">
-              
+              <a href="teacherCourseLoadGrading.php">
               <div class="icon"><i class="fa fa-pencil fa-fw"></i></div>
-              <h4><a href="teacherCourseLoadGrading.php">Final Grades</a></h4>
+              <h4 class="title text-secondary">Final Grades</h4></a>
              
             </div>
             
