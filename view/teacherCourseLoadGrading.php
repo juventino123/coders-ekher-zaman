@@ -39,9 +39,6 @@ include "./header.php";
         </div>
       </div>
 </section>
-<?php 
-
-?>
 
 <?php
         $db = new DatabaseManager();

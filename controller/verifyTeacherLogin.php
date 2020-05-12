@@ -2,6 +2,8 @@
 session_start();
 require_once('../module/DatabaseManager.php');
 require_once('../module/teacherClass.php');
+require_once('../module/semesterClass.php');
+
 
 $db = new DatabaseManager();
 
@@ -28,6 +30,16 @@ if( $result == 1 ){
 	$_SESSION['login']['id'] =  $teacher1->id;
 	$_SESSION['login']['name'] = $teacher1->firstName;
 	$_SESSION['login']['type'] = 'teacher';
+
+	// put the current semester in session 
+  	$semester1 = new semester($db);
+ 	$resultSelectSemester = $semester1->selectCurrentSemester(); 
+  	foreach ($resultSelectSemester as $semester) {
+	    $_SESSION['currentSemesterName'] = $semester['name'];
+	    $_SESSION['currentSemesterId'] = $semester['id'];
+	    } // end for  
+
+
 	header("location:../view/teacherMain.php");
 	} // end if 
 else{

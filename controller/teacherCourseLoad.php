@@ -9,7 +9,15 @@ $courseOffering1 = new courseoffering($db); //
 
 $courseOffering1->teacherId = $_SESSION['login']['id']; //
 
-$result = $courseOffering1->selectCourseOfferingTeacher($_POST['semester']);
+// onload by default $semesterId takes the value of the current semester Id
+$semesterId = $_SESSION['currentSemesterId'];
+
+if( isset($_POST['semester']) && !empty($_POST['semester']) ){
+  $semesterId = $_POST['semester'];
+
+}
+
+$result = $courseOffering1->selectCourseOfferingTeacher( $semesterId);
 
 if(empty($result) ){
 	 print '<div class="container alert alert-danger" role="alert">No result Found</div>';
